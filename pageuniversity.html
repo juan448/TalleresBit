@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+  <style>
+
+.contenedor {
+	width: 95%;
+	max-width:1000px;
+	margin:auto;
+}
+
+.contenedor p {
+	margin-bottom:40px;
+}
+
+header nav {
+	background:#e3ee0e;
+	margin-bottom:10px;
+}
+
+header nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	padding:20px;
+	color:#fff;
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	background:#eded09;
+}
+
+
+/* --- Clase que agregaremos cuando el usuario haga scroll --- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	max-width:2500px;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+    
+
+   
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    * {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 1 4px 8px 0 rgba(246, 5, 5, 0.799);
+  padding: 16px;
+  text-align: center;
+  border-radius: 3ch;
+  background-color: #f1f1f1;
+  width: 100%;
+  
+}
+
+    </style>
+    </head>
+  </head>   
+      
+      
+   
+    <header>
+      <div class="contenedor">
+        
+          <img src="data:image/png;base64,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" alt="">
+        
+        <nav class="menu">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Trabajos</a></li>
+            <li><a href="#">Contacto</a></li>
+<body>
+  
+  
+<div align="center">  
+
+        
+
+  
+  <button style="font-size:24px;color: #e3ee0e;"> <i class="fa fa-bell-o"></i></button>
+<button style="font-size:24px;color:rgb(218, 240, 19)"><i class="fa fa-home"></i></button>
+
+
+<button style="font-size:24px;color:rgb(218, 240, 19) "> <i class="fa fa-share-alt"></i></button>
+
+</div>
+
+</body>
+<br>
+
+
+
+
+
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <body>
+
+
+    
+    <div id="mySidenav" class="sidenav">
+      
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    
+    
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    
+    
+    
+    </script>
+       
+    </body>
+     
+</head>
+<body>
+  <body>
+
+    
+    
+    <div class="row">
+      
+      <div class="column">
+        <div class="image1">
+        
+        
+          <h3>Details</h3>
+          <h3>University</h3>
+          <h3>Location</h3>
+          
+        </div>
+      </div>
+      <div class="row">
+      <div class="column">
+        <div class="image2">
+          
+          <button style="font-size:24px"> <i class="fa fa-user-circle"></i></button>
+
+          <img src="https://pymstatic.com/12725/conversions/bertrand-regader-psicologiaymente-bn-medium.jpg" alt="" width="100px">
+          <div class="row">
+            <button style="font-size:24px"> <i class="fa fa-reply"></i></button>
+            <button style="font-size:34px"> <i class="material-icons"></i></button>
+
+          </div>
+        </div>
+
+
+        <h3>Publication</h3>
+        
+          
+        </div>
+      </div>
+      <div class="column">
+        <div class="image3">
+        <h3>People</h3>
+        <img src="https://www.tutionz.com/assets/images/wof/60cdca5e59f8b.jpg" alt="" width="100px">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyn361mcfxr1TxFBXw0kM3tRNKpmmzoaNMjA&usqp=CAU"  alt="" width="100px">
+          
+        </div>
+      </div>
+      
+      
+      
+      
+    </div>
+    
+    </body>
+  
+</body>
+</html>
