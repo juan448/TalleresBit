@@ -1,0 +1,15 @@
+SELECT * FROM clients WHERE ID >
+SELECT * FROM clients WHERE ID > 100;
+SELECT * FROM `clients`
+INSERT INTO `clients` VALUES ('ID', 'Nombre');
+INSERT INTO `clients` VALUES ('1390902893', 'Luz Marina');
+INSERT INTO `clients` VALUES ('1984038767', 'Laura');
+INSERT INTO `clients` VALUES ('1309874653', 'Leidi');
+INSERT INTO `clients` VALUES ('1203947389', 'Juan Jose');
+INSERT INTO `clients` VALUES ('1000398726', 'Milton');
+INSERT INTO `clients` VALUES ('1010987284', 'Nicolas');
+INSERT INTO `clients` VALUES ('1023098362', 'Esteban');
+INSERT INTO `clients` VALUES ('982817283', 'Cesar');
+INSERT INTO `clients` VALUES ('872736372', 'Samuel');
+SELECT * FROM `customers`
+
