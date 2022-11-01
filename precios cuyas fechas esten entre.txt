@@ -1,0 +1,48 @@
+const { MongoClient } = require("mongodb");
+const uri = "mongodb+srv://juan9380999:Juan3408247@cluster0.z1irqy6.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
+
+const getData = async () =>{
+    const dataBase = client.db("animals");
+    const collection = dataBase.collection("species");
+    const animals = await collection.find().toArray();
+
+
+    return animals;
+};
+const getSales = async () =>{
+const dataBase = client.db("sample_airbnb");
+const collection = dataBase.collection("listingsAndReviews");
+const sales = await collection.find().toArray();
+
+   return sales;
+}
+const bigSales = async ()=>{
+    const dataBase = client.db("sample_airbnb");
+    const collection = dataBase.collection("listingsAndReviews");
+    const result = await precios.find().sort({year:-1}).limit(4).toArray();
+
+    return result;
+};
+
+const newSale = async (document) => {
+    const dataBase = client.db("sample_airbnb");
+    const collection = dataBase.collection("listingsAndReviews");
+    await collection.insertOne(document);
+}
+
+const getSaleByItem = async () =>{
+    const dataBase = client.db("sample_airbnb");
+    const collection = dataBase.collection("listingsAndReviews");
+    const result = await collection.find({
+        "$expr": {
+          "$and": [
+            { $eq: [{ $year: "$fecha" }, { $year: new Date("2017-02-01") }]},
+            { $eq: [{ $month: "$fecha" }, { $month: new Date("2018-12-23") }]},
+            { $eq: [{ $dayOfMonth: "$fecha" }, { $dayOfMonth: new Date("2020-08-12") }]}
+          ]
+        }
+      });
+    return result;
+}
+module.exports = { getData, getSales, bigSales, newSale, getSaleByItem };
